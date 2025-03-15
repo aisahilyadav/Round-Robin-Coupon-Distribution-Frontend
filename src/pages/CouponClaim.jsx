@@ -19,7 +19,7 @@ const CouponClaim = () => {
   const handleClaim = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('https://round-robin-coupon-distributio-git-5a404c-sahilsky-ais-projects.vercel.app/api/coupons/claim', {}, {
+      const response = await axios.post('https://round-robin-coupon-distribution-red.vercel.app/api/coupons/claim', {}, {
         withCredentials: true
       });
       
