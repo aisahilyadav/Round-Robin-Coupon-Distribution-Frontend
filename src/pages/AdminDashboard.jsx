@@ -44,7 +44,7 @@ const AdminDashboard = () => {
     setLoading(true);
     setRefreshing(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/admin/coupons', {
+      const response = await axios.get('https://round-robin-coupon-distribution-backend.vercel.app/api/admin/coupons', {
         withCredentials: true
       });
       setCoupons(response.data);
@@ -64,7 +64,7 @@ const AdminDashboard = () => {
     }
     
     try {
-      await axios.post('http://localhost:5000/api/admin/coupons', { code: newCode }, {
+      await axios.post('https://round-robin-coupon-distribution-backend.vercel.app/api/admin/coupons', { code: newCode }, {
         withCredentials: true
       });
       setOpen(false);
@@ -89,7 +89,7 @@ const AdminDashboard = () => {
 
   const handleToggleStatus = async (id, currentStatus, code) => {
     try {
-      await axios.patch(`http://localhost:5000/api/admin/coupons/${id}/toggle`, {}, {
+      await axios.patch(`https://round-robin-coupon-distribution-backend.vercel.app/api/admin/coupons/${id}/toggle`, {}, {
         withCredentials: true
       });
       fetchCoupons();
